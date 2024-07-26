@@ -23,7 +23,8 @@ const init = function () {
     current0El.textContent = 0;
     current1El.textContent = 0;
 
-    diceEl.classList.add('hidden');
+    diceEl.style.display = 'none';
+
     player0El.classList.remove('player--winner');
     player1El.classList.remove('player--winner');
     player0El.classList.add('player--active');
@@ -44,7 +45,7 @@ btnRoll.addEventListener('click', function () {
     if (playing) {
         const dice = Math.trunc(Math.random() * 6) + 1;
 
-        diceEl.classList.remove('hidden');
+        diceEl.style.display = 'block'
         diceEl.src = `/images/dice-${dice}.png`;
 
         if (dice !== 1) {
